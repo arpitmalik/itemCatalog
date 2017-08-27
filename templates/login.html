@@ -1,0 +1,50 @@
+{% extends "main.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+{% include "header.html" %}
+
+{% if 'username' not in session %}
+<section id="login" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>Login with Google</h1>
+            </div>
+        </div>
+
+        <div class="row padding-top-20">
+            <div class="container">
+                <!--google plus signin-->
+                <div id="signInButton" class="text-center">
+                  <span class="g-signin"
+                    data-scope="openid email"
+                    data-clientid="575945033628-i2lafjn7f8d1akh10c37ucsutd248rop.apps.googleusercontent.com"
+                    data-redirecturi="postmessage"
+                    data-accesstype="offline"
+                    data-cookiepolicy="single_host_origin"
+                    data-callback="signInCallback"
+                    data-approvalprompt="force">
+                  </span>
+                </div>
+                <!--/google plus signin-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="login-success" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+{% endif %}
+
+
+{% endblock %}
