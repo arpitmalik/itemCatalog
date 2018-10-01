@@ -49,7 +49,7 @@ def showLogin():
     return render_template('login.html', STATE=state)
 
 
-# GConnect
+# Google OAuth Login
 @app.route('/gconnect', methods=['POST'])
 def gconnect():
     # Validate state token
